@@ -1,0 +1,567 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD0E6BC8-F36D-4CF9-AC7F-2B7A97B81A85}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLTV</RootNamespace>
+    <AssemblyName>QLTV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bookshelf.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\Data.cs" />
+    <Compile Include="Entity\ChiTietNhap.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ChiTietPhieuMuon.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ChiTietPhieuTra.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ChiTietThanhLy.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DocGia.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DoiTac.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\KeSach.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Kho.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Khu.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LoaiNV.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NhanVien.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PhieuMuon.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PhieuTra.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLTVModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLTVModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLTVModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Sach.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TacGia.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TaiKhoanDG.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TaiKhoanNV.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TheDocGia.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TheLoai.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TuaSach.cs">
+      <DependentUpon>QLTVModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChuyenSachCacKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChuyenSachCacKe.Designer.cs">
+      <DependentUpon>frmChuyenSachCacKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChuyenSachKhoKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChuyenSachKhoKe.Designer.cs">
+      <DependentUpon>frmChuyenSachKhoKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\BookDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BookDetail.Designer.cs">
+      <DependentUpon>BookDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMuonSach.Designer.cs">
+      <DependentUpon>frmMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTheDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTheDocGia.Designer.cs">
+      <DependentUpon>frmTheDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDocGia.Designer.cs">
+      <DependentUpon>frmDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmInfoReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmInfoReader.Designer.cs">
+      <DependentUpon>frmInfoReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmKe.Designer.cs">
+      <DependentUpon>frmKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDoiTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDoiTac.Designer.cs">
+      <DependentUpon>frmDoiTac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmChuyenSachCacKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmChuyenSachCacKho.Designer.cs">
+      <DependentUpon>frmChuyenSachCacKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmThanhLySach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThanhLySach.Designer.cs">
+      <DependentUpon>frmThanhLySach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmNhapSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmNhapSach.Designer.cs">
+      <DependentUpon>frmNhapSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmListBookBorrowed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmListBookBorrowed.Designer.cs">
+      <DependentUpon>frmListBookBorrowed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmReadBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmReadBook.Designer.cs">
+      <DependentUpon>frmReadBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTacGia.Designer.cs">
+      <DependentUpon>frmTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTheLoai.Designer.cs">
+      <DependentUpon>frmTheLoai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmRpListReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmRpListReader.Designer.cs">
+      <DependentUpon>frmRpListReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FrmRpListReaderCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmRpListReaderCard.Designer.cs">
+      <DependentUpon>FrmRpListReaderCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTuaSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTuaSach.Designer.cs">
+      <DependentUpon>frmTuaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmKhu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmKhu.Designer.cs">
+      <DependentUpon>frmKhu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmKho.Designer.cs">
+      <DependentUpon>frmKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QLTVDataSet.cs">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLTVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XrptListReaderCardViaPhase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XrptListReaderCardViaPhase.Designer.cs">
+      <DependentUpon>XrptListReaderCardViaPhase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XrptListReaderViaPhase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XrptListReaderViaPhase.Designer.cs">
+      <DependentUpon>XrptListReaderViaPhase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\CodeGenerator.cs" />
+    <Compile Include="Util\ImageData.cs" />
+    <Compile Include="Util\XDialog.cs" />
+    <EmbeddedResource Include="GUI\frmChuyenSachCacKe.resx">
+      <DependentUpon>frmChuyenSachCacKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChuyenSachKhoKe.resx">
+      <DependentUpon>frmChuyenSachKhoKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BookDetail.resx">
+      <DependentUpon>BookDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMuonSach.resx">
+      <DependentUpon>frmMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTheDocGia.resx">
+      <DependentUpon>frmTheDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDocGia.resx">
+      <DependentUpon>frmDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmInfoReader.resx">
+      <DependentUpon>frmInfoReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmKe.resx">
+      <DependentUpon>frmKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDoiTac.resx">
+      <DependentUpon>frmDoiTac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmChuyenSachCacKho.resx">
+      <DependentUpon>frmChuyenSachCacKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThanhLySach.resx">
+      <DependentUpon>frmThanhLySach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNhapSach.resx">
+      <DependentUpon>frmNhapSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmListBookBorrowed.resx">
+      <DependentUpon>frmListBookBorrowed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmReadBook.resx">
+      <DependentUpon>frmReadBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTacGia.resx">
+      <DependentUpon>frmTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTheLoai.resx">
+      <DependentUpon>frmTheLoai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmRpListReader.resx">
+      <DependentUpon>frmRpListReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmRpListReaderCard.resx">
+      <DependentUpon>FrmRpListReaderCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTuaSach.resx">
+      <DependentUpon>frmTuaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmKhu.resx">
+      <DependentUpon>frmKhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmKho.resx">
+      <DependentUpon>frmKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XrptListReaderCardViaPhase.resx">
+      <DependentUpon>XrptListReaderCardViaPhase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XrptListReaderViaPhase.resx">
+      <DependentUpon>XrptListReaderViaPhase.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <EntityDeploy Include="Entity\QLTVModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLTVModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\QLTVModel.edmx.diagram">
+      <DependentUpon>QLTVModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\QLTV.Entity.ChiTietPhieuMuon.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.DocGia.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.DoiTac.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.KeSach.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.Kho.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.Khu.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.PhieuMuon.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.Sach.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.TacGia.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.TheDocGia.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.TheLoai.datasource" />
+    <None Include="Properties\DataSources\QLTV.Entity.TuaSach.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLTVDataSet.xsc">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLTVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLTVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLTVDataSet.xss">
+      <DependentUpon>QLTVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\cartoon-galaxy-with-stars-background_900x600.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ptit_logo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bookshelf.ico" />
+    <Content Include="Entity\QLTVModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLTVModel.edmx</DependentUpon>
+      <LastGenOutput>QLTVModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\QLTVModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLTVModel.edmx</DependentUpon>
+      <LastGenOutput>QLTVModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\btnReload.ImageOptions.Image.png" />
+    <None Include="Resources\btnHuy.ImageOptions.Image.png" />
+    <None Include="Resources\btnGhi.ImageOptions.Image.png" />
+    <None Include="Resources\btnSua.ImageOptions.Image.png" />
+    <None Include="Resources\btnXoa.ImageOptions.Image.png" />
+    <None Include="Resources\btnThem.ImageOptions.Image.png" />
+    <None Include="Resources\stack_of_books_isometric_icon-removebg_16x16.png" />
+    <None Include="Resources\favpng_book-depository_32x32.png" />
+    <None Include="Resources\stack_of_books_isometric_icon-removebg_32x32.png" />
+    <None Include="Resources\bouser_32x32.png" />
+    <None Include="Resources\bocontact2_32x32.png" />
+    <None Include="Resources\bocontact2_16x16.png" />
+    <None Include="Resources\bodetails_32x32.png" />
+    <None Include="Resources\bodetails_16x16.png" />
+    <Content Include="Resources\Book.png" />
+    <None Include="Resources\moveup_32x32.png" />
+    <None Include="Resources\movedown_32x32.png" />
+    <None Include="Resources\movedown_16x16.png" />
+    <None Include="Resources\Book_16x16.png" />
+    <None Include="Resources\category_19x16.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\boperson_32x32.png" />
+    <None Include="Resources\boperson_16x16.png" />
+    <None Include="Resources\bookshelf_16x16.png" />
+    <None Include="Resources\purple_bookshelf_16x16.png" />
+    <None Include="Resources\purple_bookshelf_1042x1042.png" />
+    <None Include="Resources\bookshelf_500x500.png" />
+    <None Include="Resources\morefunctions_16x16.png" />
+    <None Include="Resources\morefunctions_32x32.png" />
+    <None Include="Resources\bocustomer_16x16.png" />
+    <None Include="Resources\bocustomer_32x32.png" />
+    <None Include="Resources\outbox_16x16.png" />
+    <None Include="Resources\outbox_32x32.png" />
+    <None Include="Resources\inbox_16x16.png" />
+    <None Include="Resources\inbox_32x32.png" />
+    <None Include="Resources\converttorange_16x16.png" />
+    <None Include="Resources\converttorange_32x32.png" />
+    <None Include="Resources\purple_bookshelf.png" />
+    <None Include="Resources\warehouse_16x16.png" />
+    <None Include="Resources\bopermission_16x16.png" />
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\close_16x16.png" />
+    <None Include="Resources\close_32x32.png" />
+    <None Include="Resources\bookshelf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
